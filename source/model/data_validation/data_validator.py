@@ -3,10 +3,12 @@ from i_data_validator import IDataValidator
 import re
 
 
+# Written by Steven Snelling
 class DataValidator(IDataValidator):
-    # Written by Steven Snelling
+
     def validate_data(self, dirty_data_arr):
         clean_people = []
+        patterns = {"empid" : "^[A-Z][0-9]{3}$"}
 
         try:
             for dirty_person in dirty_data_arr:
@@ -14,7 +16,7 @@ class DataValidator(IDataValidator):
                 if len(dirty_person) == 7:
                     cleaned_person = []
 
-                    if self.validate_empid(str(dirty_person[0])):
+                    if self.__test_data(str(dirty_person[0]), patterns["empid"]):
                         print("Valid empid: " + str(dirty_person[0]))
                         cleaned_person.append(str(dirty_person[0]))
 
