@@ -76,13 +76,6 @@ class DataValidator(IDataValidator):
             return False
 
     @staticmethod
-    def validate_salary(salary):
-        if re.compile("^[0-9]{2,3}$").match(salary):
-            return True
-        else:
-            return False
-
-    @staticmethod
     def validate_birthday(birthday):
         if re.compile("^([0-9]{1,2})-([0-9]{1,2})-([0-9]{4})$").match(birthday):
             return True
