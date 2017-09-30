@@ -8,7 +8,10 @@ class DataValidator(IDataValidator):
 
     def validate_data(self, dirty_data_arr):
         clean_people = []
-        patterns = {"empid" : "^[A-Z][0-9]{3}$"}
+        patterns = {
+                     "empid" : "^[A-Z][0-9]{3}$",
+                     "gender" : "^[M|F]$"
+                   }
 
         try:
             for dirty_person in dirty_data_arr:
@@ -20,7 +23,7 @@ class DataValidator(IDataValidator):
                         print("Valid empid: " + str(dirty_person[0]))
                         cleaned_person.append(str(dirty_person[0]))
 
-                    if self.validate_gender(str(dirty_person[1])):
+                    if self.__test_data(str(dirty_person[1]), patterns["gender"]):
                         print("Valid gender: " + str(dirty_person[1]))
                         cleaned_person.append(str(dirty_person[1]))
 
