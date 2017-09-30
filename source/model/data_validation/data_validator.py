@@ -9,13 +9,13 @@ class DataValidator(IDataValidator):
     def validate_data(self, dirty_data_arr):
         clean_people = []
         patterns = {
-                     "empid" : "^[A-Z][0-9]{3}$",
-                     "gender" : "^[M|F]$",
-                     "age" : "^[0-9]{2}$",
-                     "sales" : "^[0-9]{3}$",
-                     "bmi" : "^Normal|Overweight|Obesity|Underweight$",
-                     "salary" : "^[0-9]{2,3}$",
-                     "birthday" : "^([0-9]{1,2})-([0-9]{1,2})-([0-9]{4})$"
+                     "empid": "^[A-Z][0-9]{3}$",
+                     "gender": "^[M|F]$",
+                     "age": "^[0-9]{2}$",
+                     "sales": "^[0-9]{3}$",
+                     "bmi": "^Normal|Overweight|Obesity|Underweight$",
+                     "salary": "^[0-9]{2,3}$",
+                     "birthday": "^([0-9]{1,2})-([0-9]{1,2})-([0-9]{4})$"
                    }
 
         try:
