@@ -75,13 +75,6 @@ class DataValidator(IDataValidator):
             return False
 
     @staticmethod
-    def validate_bmi(bmi):
-        if re.compile("^Normal|Overweight|Obesity|Underweight$").match(bmi):
-            return True
-        else:
-            return False
-
-    @staticmethod
     def validate_salary(salary):
         if re.compile("^[0-9]{2,3}$").match(salary):
             return True
