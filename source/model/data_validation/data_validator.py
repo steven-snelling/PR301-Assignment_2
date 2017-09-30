@@ -60,6 +60,13 @@ class DataValidator(IDataValidator):
         return clean_people
 
     @staticmethod
+    def __test_data(data, pattern):
+        if re.compile(pattern).match(data):
+            return True
+        else:
+            return False
+
+    @staticmethod
     def validate_empid(empid):
         if re.compile("^[A-Z][0-9]{3}$").match(empid):
             return True
