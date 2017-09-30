@@ -72,20 +72,6 @@ class DataValidator(IDataValidator):
             return False
 
     @staticmethod
-    def validate_empid(empid):
-        if re.compile("^[A-Z][0-9]{3}$").match(empid):
-            return True
-        else:
-            return False
-
-    @staticmethod
-    def validate_gender(gender):
-        if re.compile("^[M|F]$").match(gender):
-            return True
-        else:
-            return False
-
-    @staticmethod
     def validate_age(age):
         if re.compile("^[0-9]{2}$").match(age):
             return True
