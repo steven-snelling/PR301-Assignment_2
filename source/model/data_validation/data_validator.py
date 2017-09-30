@@ -10,7 +10,8 @@ class DataValidator(IDataValidator):
         clean_people = []
         patterns = {
                      "empid" : "^[A-Z][0-9]{3}$",
-                     "gender" : "^[M|F]$"
+                     "gender" : "^[M|F]$",
+                     "age" : "^[0-9]{2}$"
                    }
 
         try:
@@ -27,7 +28,7 @@ class DataValidator(IDataValidator):
                         print("Valid gender: " + str(dirty_person[1]))
                         cleaned_person.append(str(dirty_person[1]))
 
-                    if self.validate_age(str(dirty_person[2])):
+                    if self.__test_data(str(dirty_person[2]), patterns["age"]):
                         print("Valid age: " + str(dirty_person[2]))
                         cleaned_person.append(str(dirty_person[2]))
 
