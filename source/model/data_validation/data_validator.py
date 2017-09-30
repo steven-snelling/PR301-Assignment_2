@@ -14,7 +14,8 @@ class DataValidator(IDataValidator):
                      "age" : "^[0-9]{2}$",
                      "sales" : "^[0-9]{3}$",
                      "bmi" : "^Normal|Overweight|Obesity|Underweight$",
-                     "salary" : "^[0-9]{2,3}$"
+                     "salary" : "^[0-9]{2,3}$",
+                     "birthday" : "^([0-9]{1,2})-([0-9]{1,2})-([0-9]{4})$"
                    }
 
         try:
@@ -47,7 +48,7 @@ class DataValidator(IDataValidator):
                         print("Valid salary: " + str(dirty_person[5]))
                         cleaned_person.append(str(dirty_person[5]))
 
-                    if self.validate_birthday(str(dirty_person[6])):
+                    if self.__test_data(str(dirty_person[6]), patterns["birthday"]):
                         print("Valid birthday: " + str(dirty_person[6]))
                         cleaned_person.append(str(dirty_person[6]))
                 else:
