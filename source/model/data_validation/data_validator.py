@@ -11,7 +11,8 @@ class DataValidator(IDataValidator):
         patterns = {
                      "empid" : "^[A-Z][0-9]{3}$",
                      "gender" : "^[M|F]$",
-                     "age" : "^[0-9]{2}$"
+                     "age" : "^[0-9]{2}$",
+                     "sales" : "^[0-9]{3}$"
                    }
 
         try:
@@ -32,7 +33,7 @@ class DataValidator(IDataValidator):
                         print("Valid age: " + str(dirty_person[2]))
                         cleaned_person.append(str(dirty_person[2]))
 
-                    if self.validate_sales(str(dirty_person[3])):
+                    if self.__test_data(str(dirty_person[3]), patterns["sales"]):
                         print("Valid Sales: " + str(dirty_person[3]))
                         cleaned_person.append(str(dirty_person[3]))
 
