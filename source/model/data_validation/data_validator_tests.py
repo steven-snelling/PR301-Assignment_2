@@ -3,7 +3,8 @@ from data_validator import *
 
 
 class DataValidatorTests(unittest.TestCase):
-    # DataValidatorTests structure first 7 test cases done by Steven Snelling
+    # By Steven Snelling
+
     @classmethod
     def setUpClass(cls):
         cls.dataValidator = DataValidator()
@@ -18,7 +19,6 @@ class DataValidatorTests(unittest.TestCase):
         self.data_3 = [['H001', '16', '200', 'Normal', '230', '30-05-1999']]
 
         self.data_4 = False
-
 
     def tearDown(self):
         # be executed after each test case
@@ -54,5 +54,4 @@ class DataValidatorTests(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    # unittest.main(verbosity=2)  # with more details
-    unittest.main()
+    unittest.main(verbosity=2)
