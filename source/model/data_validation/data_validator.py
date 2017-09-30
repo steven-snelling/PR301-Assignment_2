@@ -72,12 +72,6 @@ class DataValidator(IDataValidator):
         else:
             return False
 
-    @staticmethod
-    def validate_age(age):
-        if re.compile("^[0-9]{2}$").match(age):
-            return True
-        else:
-            return False
 
     @staticmethod
     def validate_sales(sales):
