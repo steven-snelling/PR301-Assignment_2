@@ -12,7 +12,8 @@ class DataValidator(IDataValidator):
                      "empid" : "^[A-Z][0-9]{3}$",
                      "gender" : "^[M|F]$",
                      "age" : "^[0-9]{2}$",
-                     "sales" : "^[0-9]{3}$"
+                     "sales" : "^[0-9]{3}$",
+                     "bmi" : "^Normal|Overweight|Obesity|Underweight$"
                    }
 
         try:
@@ -37,7 +38,7 @@ class DataValidator(IDataValidator):
                         print("Valid Sales: " + str(dirty_person[3]))
                         cleaned_person.append(str(dirty_person[3]))
 
-                    if self.validate_bmi(str(dirty_person[4])):
+                    if self.__test_data(str(dirty_person[4]), patterns["bmi"]):
                         print("Valid BMI: " + str(dirty_person[4]))
                         cleaned_person.append(str(dirty_person[4]))
 
