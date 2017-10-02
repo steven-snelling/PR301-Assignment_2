@@ -1,9 +1,10 @@
 from view.i_graph_view import IGraphView
+from view.i_cmd_view import ICmdView
 from plotly import *
 import plotly.graph_objs as ob
 
 
-class GraphView(IGraphView):
+class GraphView(IGraphView, ICmdView):
     def sales_by_gender_graph(self, data_arr):
         gender_data = []
         sales_data = []
