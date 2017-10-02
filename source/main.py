@@ -8,6 +8,7 @@
 
 from interpreter_controller import InterpreterController
 from view.graph_view import *
+from view.cmd_view import *
 from model.interpreter import *
 from model.file_handler.file_handler import *
 from model.data_validation.data_validator import *
@@ -16,7 +17,7 @@ import sys
 
 
 if __name__ == '__main__':
-    InterpreterController(GraphView(), Interpreter(
+    InterpreterController(CmdView(), GraphView(), Interpreter(
                             DataValidator(),
                             FileHandler(),
                             Database(),
