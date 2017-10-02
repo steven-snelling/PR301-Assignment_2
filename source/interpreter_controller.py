@@ -9,7 +9,7 @@ class InterpreterController(Cmd):
     # links the model (interpreter) to the view  (GraphView)
     #
 
-    def __init__(self, in_view, in_interpreter):
+    def __init__(self, in_view, in_graph_view, in_interpreter):
         # Written By Thomas
         #
         # The InterpreterController Object is given a view and
@@ -22,6 +22,7 @@ class InterpreterController(Cmd):
         Cmd.__init__(self)
         self.prompt = '> '
         self.my_view = in_view
+        self.my_graph_view = in_graph_view
         self.my_interpreter = in_interpreter
 
     @staticmethod
@@ -126,10 +127,10 @@ class InterpreterController(Cmd):
         #
         options_arr = self.parse_args(args)
         option_dict = {
-            '-a': self.my_view.sales_by_gender_graph,
-            '-b': self.my_view.employees_by_gender_graph,
-            '-c': self.my_view.age_verse_salary_graph,
-            '-d': self.my_view.bmi_pie_graph
+            '-a': self.my_graph_view.sales_by_gender_graph,
+            '-b': self.my_graph_view.employees_by_gender_graph,
+            '-c': self.my_graph_view.age_verse_salary_graph,
+            '-d': self.my_graph_view.bmi_pie_graph
         }
         for key, value in option_dict.items():
             if options_arr[0] == key:
