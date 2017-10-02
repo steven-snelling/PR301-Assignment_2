@@ -1,10 +1,9 @@
 from view.i_graph_view import IGraphView
-from view.i_cmd_view import ICmdView
 from plotly import *
 import plotly.graph_objs as ob
 
 
-class GraphView(IGraphView, ICmdView):
+class GraphView(IGraphView):
     def sales_by_gender_graph(self, data_arr):
         gender_data = []
         sales_data = []
@@ -97,23 +96,6 @@ class GraphView(IGraphView, ICmdView):
                 'title': 'Staff by BMI'}
         }
         self.show_graph(graph_data)
-
-    @staticmethod
-    def show(show_string):
-        print(show_string)
-
-    @staticmethod
-    def read(prompt):
-        return input(prompt)
-
-    def manual_person_flow(self):
-        person_data_arr = []
-        person_data = [self.read("Enter your employee ID: "), self.read("Enter your gender: "),
-                       self.read("Enter your age: "), self.read("Enter your sales count: "),
-                       self.read("Enter your BMI: "), self.read("Enter your salary: "),
-                       self.read("Enter your birthday, e.g. dd-mm-yyyy: ")]
-        person_data_arr.append(person_data)
-        return person_data_arr
 
     @staticmethod
     def show_graph(graph_data):
