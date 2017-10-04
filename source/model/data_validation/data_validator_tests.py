@@ -40,7 +40,7 @@ class DataValidatorTests(unittest.TestCase):
 
     def test_data_validator_03(self):
         # bad day for testing validator some data
-        result = "Not enough feilds: 6"
+        result = "Not enough fields: 6"
         test = self.dataValidator.validate_data(self.data_3)
         response = "That data array is missing data"
         self.assertEqual(test, result, response)
