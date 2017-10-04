@@ -22,6 +22,11 @@ class DataValidator(IDataValidator):
                 if len(dirty_person) == 7:
                     cleaned_person = []
 
+                    for index, item in enumerate(dirty_person):
+
+                        if self.__test_data(str(dirty_person[index]), patterns[index]):
+                            print("Valid data: " + str(dirty_person[index]))
+
                     if self.__test_data(str(dirty_person[0]), patterns[0]):
                         print("Valid empid: " + str(dirty_person[0]))
                         cleaned_person.append(str(dirty_person[0]))
