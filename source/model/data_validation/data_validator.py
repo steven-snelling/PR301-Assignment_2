@@ -24,9 +24,9 @@ class DataValidator(IDataValidator):
 
                     for index, item in enumerate(dirty_person):
 
-                        if self.__test_data(str(dirty_person[index]), patterns[index]):
-                            print("Valid data: " + str(dirty_person[index]))
-                            cleaned_person.append(str(dirty_person[index]))
+                        if self.__test_data(item, patterns[index]):
+                            print("Valid data: ", item)
+                            cleaned_person.append(item)
 
                 else:
                     return "Not enough fields: " + str(len(dirty_person))
