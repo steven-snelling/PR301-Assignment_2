@@ -36,7 +36,8 @@ class Interpreter:
     def serialize_data_arr(self, args=''):
         try:
             if args == '':
-                self.file_handler.shelve_file(self.data_arr, self.default_file_path)
+                self.file_handler.shelve_file(self.data_arr,
+                                              self.default_file_path)
             else:
                 self.file_handler.shelve_file(self.data_arr, args)
 
@@ -47,7 +48,8 @@ class Interpreter:
     def save_file(self, args=''):
         try:
             if args == '':
-                self.file_handler.save_file(self.data_arr, self.default_file_path)
+                self.file_handler.save_file(self.data_arr,
+                                            self.default_file_path)
             else:
                 self.file_handler.save_file(self.data_arr, args)
 
