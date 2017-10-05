@@ -35,9 +35,7 @@ class Interpreter:
 
     def serialize_data_arr(self, args=''):
         try:
-
             if args == '':
-
                 self.file_handler.shelve_file(self.data_arr, self.default_file_path)
             else:
                 self.file_handler.shelve_file(self.data_arr, args)
@@ -47,19 +45,15 @@ class Interpreter:
             return False
 
     def save_file(self, args=''):
-        if args == '':
-            try:
-                self.file_handler.save_file(self.data_arr,
-                                            self.default_file_path)
-            except OSError as erro:
-                print(erro)
-                return False
-        else:
-            try:
+        try:
+            if args == '':
+                self.file_handler.save_file(self.data_arr, self.default_file_path)
+            else:
                 self.file_handler.save_file(self.data_arr, args)
-            except OSError as erro:
-                print(erro)
-                return False
+
+        except OSError as erro:
+            print(erro)
+            return False
 
     def save_database(self, database_name='mydb'):
         # Written By Thomas
