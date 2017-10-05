@@ -34,7 +34,6 @@ class Interpreter:
         return self.data_arr
 
     def serialize_data_arr(self, args=''):
-        # Written by Steven - Based off of Thomas work in save_file
         if args == '':
             try:
                 self.file_handler.shelve_file(self.data_arr, self.default_file_path)
@@ -50,14 +49,6 @@ class Interpreter:
                 return False
 
     def save_file(self, args=''):
-        # Written By Thomas
-        #
-        # Takes the currently set data in the data array and
-        # saves it to a file location. file location defaults
-        # to the main location unless the user set the default
-        # to something else when the launched the program.
-        #
-        #
         if args == '':
             try:
                 self.file_handler.save_file(self.data_arr,
