@@ -61,7 +61,8 @@ class InterpreterController(Cmd):
         ***
         OPTIONS
             -l : This loads the information from a file. The file is given to the command as a string.
-            -m : This is for manual data entry. The user will be prompted for the information in steps after entering this option.
+            -m : This is for manual data entry. The user will be prompted \
+for the information in steps after entering this option.
             -d : This loads the information into the system from a database.
         ***
         """
@@ -82,11 +83,12 @@ class InterpreterController(Cmd):
         self.find_in_dict(options_arr, option_dict)
 
     def do_save(self, *args):
-        #Vaishali
+        # Vaishali
         """
         ***
         OPTIONS
-                        -s : This is a standard save. The information is saved to a file in the saves folder in the program files. (object is serialized)
+                        -s : This is a standard save. The information is saved to a file in \
+the saves folder in the program files. (object is serialized)
                         -d : This saves the current information to the database.
                         -f : This saves a file to the specified file location.
         ***
