@@ -1,5 +1,5 @@
-# from model.data_validation.i_data_validator import IDataValidator
-from i_data_validator import IDataValidator
+from model.data_validation.i_data_validator import IDataValidator
+# from i_data_validator import IDataValidator
 import re
 
 
@@ -24,9 +24,9 @@ class DataValidator(IDataValidator):
 
                     for index, item in enumerate(dirty_person):
 
-                        if self.__test_data(item, patterns[index]):
-                            print("Valid data: ", item)
-                            cleaned_person.append(item)
+                        if self.__test_data(str(item), patterns[index]):
+                            print("Valid data: ", str(item))
+                            cleaned_person.append(str(item))
 
                 else:
                     return "Not enough fields: " + str(len(dirty_person))
